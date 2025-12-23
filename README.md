@@ -15,13 +15,19 @@ Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id 
 Create an event rule 
 
 Condition: Event Type
+
 Service Name: Block Volume
+
 Event Type: Create Volume End
 
 Under Actions select 
+
 Action Type: Functions
+
 Function Compartment: **select the compartment where the function was created**
+
 Function Application: **select the name of the function application**
+
 Function Name: **select the ame of the function**
 
 <img width="1661" height="683" alt="image" src="https://github.com/user-attachments/assets/c77e0471-78e9-4ae2-8b6b-964d4d31a448" />
