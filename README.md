@@ -5,7 +5,7 @@ This template demonstrates how to automate the configuration of backup policies 
 
 Create a [dynamic group](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm) for the compartment where block storage volumes will be created. You can use the following matching rule:
 
-ALL {resource.type = 'fnfunc', resource.compartment.id = '<compartment-id>'}
+ALL {resource.type = 'fnfunc', resource.compartment.id = 'compartment-id'}
 
 The following policies are required for this dynamic group:
 
