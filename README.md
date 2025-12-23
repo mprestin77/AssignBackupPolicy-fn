@@ -30,6 +30,6 @@ Function Application: **select the name of the function application**
 
 Function Name: **select the ame of the function**
 
-<img width="1661" height="683" alt="image" src="[https://github.com/user-attachments/assets/c77e0471-78e9-4ae2-8b6b-964d4d31a448](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)" />
+<img width="1661" height="683" alt="image" src="(https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)" />
 
 
