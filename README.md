@@ -25,8 +25,7 @@ Use the context for your region, here us-phoenix-1 is used as an example
 fn list context
 fn use context us-phoenix-1
 ```
-Set up your Cloud Shell dev environment
-```
+
 Update the context with the function's compartment ID
 ```
 fn update context oracle.compartment-id ocid1.compartment.oc1..
