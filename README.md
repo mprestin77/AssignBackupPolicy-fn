@@ -59,7 +59,7 @@ Create an application *backup_policy* as described in [Create Applications](http
 fn -v deploy --app backup_policy
 ```
 
-Check that the function is successfully created.
+Check that the function is successfully deployed.
 
 **Create an event rule**
 
