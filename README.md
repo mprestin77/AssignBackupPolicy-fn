@@ -22,10 +22,11 @@ Event Type: Create Volume End
 Under Actions select 
 ```
 Action Type: Functions
-Function Compartment: ***select the compartment where the function was created***
-Function Application: * select the name of the function application *
-Function Name: * select the ame of the function *
 ```
+Function Compartment: *select the compartment where the function was created*
+Function Application: *select the name of the function application*
+Function Name: *select the ame of the function*
+
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)"
 
 
