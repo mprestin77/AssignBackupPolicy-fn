@@ -13,6 +13,13 @@ Allow dynamic-group <dynamic-group-name> to manage backup-policy-assignments in 
 Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id <compartment OCID>
 ```
 Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html)
+
+Login to OCI Cloud Console and Launch cloud shell
+
+Use the context for your region, Here ap-sydney-1 is used as an example
+```
+fn list context
+fn use context <region-name>
 ```
 C - Set up your Cloud Shell dev environment
 ```
