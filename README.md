@@ -14,17 +14,15 @@ Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id 
 ```
 
 Create an event rule 
-
+```
 Condition: Event Type
-
 Service Name: Block Volume
-
 Event Type: Create Volume End
-
+```
 Under Actions select 
-
+```
 Action Type: Functions
-
+```
 Function Compartment: **select the compartment where the function was created**
 
 Function Application: **select the name of the function application**
