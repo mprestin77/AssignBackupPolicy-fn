@@ -22,7 +22,7 @@ fn update context oracle.compartment-id ocid1.compartment.oc1..
 ```
 Update the context with the location of the Registry you want to use
 ```
-fn update context registry iad.ocir.io/<YOUR-NAMESPACE>/[YOUR-OCIR-REPO]
+fn update context registry <region-key>.ocir.io/<tenancy-namespace>/[OCIR-repo-name]
 ```
 [Generate Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
 
