@@ -14,6 +14,10 @@ Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id 
 ```
 Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html)
 
+*Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the quick start guide.*
+
+**Setup your cloudshell environment**
+
 Login to OCI Cloud Console and Launch cloud shell
 
 Use the context for your region, here us-phoenix-1 is used as an example
@@ -21,19 +25,32 @@ Use the context for your region, here us-phoenix-1 is used as an example
 fn list context
 fn use context us-phoenix-1
 ```
-C - Set up your Cloud Shell dev environment
+Set up your Cloud Shell dev environment
 ```
 Update the context with the function's compartment ID
 ```
 fn update context oracle.compartment-id ocid1.compartment.oc1..
 ```
-Update the context with the location of the Registry you want to use. As an example I am using for phx for us-phoenix-1
+Update the context with the location of the Registry you want to use. As an example I am using for phx for us-phoenix-1 region
 ```
 fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
+
+**Authenticate to OCIR registry**
+
 Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
 
+Log into the Registry using the Auth Token as your password
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End
+
+Log into the Registry using the Auth Token as your password. As an example I am using for phx for us-phoenix-1 region
+docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
+
+**Create, deploy and invoke your function**
+```
+fn init --runtime python
+
+```
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
