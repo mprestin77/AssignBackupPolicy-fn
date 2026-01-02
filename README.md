@@ -50,6 +50,7 @@ Copy assign_backup_policy folder to Cloud Shell and edit func.yaml file
 
 
 **Create an event rule**
+
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End.
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
