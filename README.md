@@ -35,21 +35,21 @@ Update the context with the location of the Registry you want to use. As an exam
 fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
 
-**Authenticate to OCIR registry**
+***Authenticate to OCIR registry***
 
-Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
-
-Log into the Registry using the Auth Token as your password
-Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End
-
-Log into the Registry using the Auth Token as your password. As an example I am using for phx for us-phoenix-1 region
+Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) and log into the Registry using the Auth Token as your password. 
+As an example I am using for phx for us-phoenix-1 region
+```
 docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
+```
 
 **Create, deploy and invoke your function**
 ```
 fn init --runtime python
-
 ```
+
+***Create an event rule***
+Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End.
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
