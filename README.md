@@ -24,7 +24,7 @@ Update the context with the location of the Registry you want to use
 ```
 fn update context registry <region-key>.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
-[Generate Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
+Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
 
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End
 
