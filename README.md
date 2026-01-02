@@ -46,13 +46,12 @@ docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 **Create, deploy and invoke your function**
 
 Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. Set TAG_NAMESPACE to your backup tag namespace. As an example my tag namespace is called *Production*
-
 ```
 config:
   TAG_NAME: BackupPolicyID
   TAG_NAMESPACE: Production
 ```
-*Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID
+*Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID*
 
 Create an application *backup_policy* as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm) and create a function *assign_backup_policy*
 ```
