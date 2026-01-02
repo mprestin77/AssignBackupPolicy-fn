@@ -16,9 +16,9 @@ Before you deploy AssignBackupPolicy function, make sure you have run step C of 
 
 *Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the quick start guide.*
 
-**Setup your cloudshell environment**
+**Setup your Cloud Shell environment**
 
-Login to OCI Cloud Console and Launch cloud shell
+Login to OCI Cloud Console and Launch Cloud Shell
 
 Use the context for your region, here us-phoenix-1 is used as an example
 ```
@@ -44,9 +44,10 @@ docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 ```
 
 **Create, deploy and invoke your function**
-```
-fn init --runtime python
-```
+
+Copy assign_backup_policy folder to Cloud Shell and edit func.yaml file  
+
+
 
 ***Create an event rule***
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End.
