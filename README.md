@@ -8,9 +8,10 @@ Create a [dynamic group](https://docs.oracle.com/en-us/iaas/Content/Identity/Tas
 ALL {resource.type = 'fnfunc', resource.compartment.id = 'compartment-id'}
 
 The following policies are required for this dynamic group:
-
+```
 Allow dynamic-group <dynamic-group-name> to manage backup-policy-assignments in compartment id <compartment OCID>
 Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id <compartment OCID>
+```
 
 Create an event rule 
 
