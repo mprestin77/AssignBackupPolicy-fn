@@ -14,7 +14,7 @@ Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id 
 ```
 
 Create an event rule with a **Condition** Event Type, **Service Name** Block Volume, and **Event Type** Create Volume End
-```
+
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)"
