@@ -12,7 +12,19 @@ The following policies are required for this dynamic group:
 Allow dynamic-group <dynamic-group-name> to manage backup-policy-assignments in compartment id <compartment OCID>
 Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id <compartment OCID>
 ```
-
+Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html)
+```
+C - Set up your Cloud Shell dev environment
+```
+Update the context with the function's compartment ID
+```
+fn update context oracle.compartment-id ocid1.compartment.oc1..
+```
+Update the context with the location of the Registry you want to use
+```
+fn update context registry syd.ocir.io/<YOUR-NAMESPACE>/[YOUR-OCIR-REPO]
+```
+[Generate Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
 
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End
 
