@@ -16,10 +16,10 @@ Before you deploy AssignBackupPolicy function, make sure you have run step C of 
 
 Login to OCI Cloud Console and Launch cloud shell
 
-Use the context for your region, Here ap-sydney-1 is used as an example
+Use the context for your region, here us-phoenix-1 is used as an example
 ```
 fn list context
-fn use context <region-name>
+fn use context us-phoenix-1
 ```
 C - Set up your Cloud Shell dev environment
 ```
@@ -27,9 +27,9 @@ Update the context with the function's compartment ID
 ```
 fn update context oracle.compartment-id ocid1.compartment.oc1..
 ```
-Update the context with the location of the Registry you want to use
+Update the context with the location of the Registry you want to use. As an example I am using for phx for us-phoenix-1
 ```
-fn update context registry <region-key>.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
+fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
 Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) 
 
