@@ -19,16 +19,7 @@ Condition: Event Type
 Service Name: Block Volume
 Event Type: Create Volume End
 ```
-Under Actions select 
-```
-Action Type: Functions
-```
-`Function Compartment`: *select the compartment where the function was created*`
-
-`Function Application`: *select the name of the function application*
-
-`Function Name`: *select the ame of the function*
-
+Under Actions set "Action Type" to Functions and select Function Compartment, Function Application and Function Name.
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)"
 
