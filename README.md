@@ -45,7 +45,7 @@ docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 
 **Create, deploy and invoke your function**
 
-Copy assign_backup_policy folder to Cloud Shell and edit func.yaml file. Set TAG_NAMESPACE to your backup tag namespace. As an example my tag namespace is called *Production*
+Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. Set TAG_NAMESPACE to your backup tag namespace. As an example my tag namespace is called *Production*
 
 ```
 config:
