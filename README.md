@@ -23,7 +23,7 @@ Under Actions select
 ```
 Action Type: Functions
 ```
-```Function Compartment```: *select the compartment where the function was created*
+`Function Compartment: *select the compartment where the function was created*`
 Function Application: *select the name of the function application*
 Function Name: *select the ame of the function*
 
