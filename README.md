@@ -13,7 +13,7 @@ Allow dynamic-group <dynamic-group-name> to manage backup-policy-assignments in 
 Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id <compartment OCID>
 ```
 
-Create an event rule with a **Condition**: Event Type, **Service Name** Block Volume, and **Event Type** Create Volume End
+Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
