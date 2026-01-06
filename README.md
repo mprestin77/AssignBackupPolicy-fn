@@ -14,9 +14,9 @@ Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id 
 ```
 Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartcloudshell.htm)
 
-*Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the [Functions Quick Start on Local Host](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm).*
+*Note: In this example I am using OCI Cloud Shell for deploying my function. Alternatively, you can also use your local machine or OCI Compute as your dev environments. refer the [Functions Quick Start on Local Host](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm).*
 
-**Setup your Cloud Shell environment**
+***Setup your Cloud Shell environment***
 
 Login to OCI Cloud Console and Launch Cloud Shell
 
@@ -36,7 +36,7 @@ fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
 To find a region key for the region you are using see [OCI Region Availbility](https://docs.oracle.com/en-us/iaas/analytics-for-applications/doc/region-availability.html) map.
 
-**Authenticate to OCIR registry**
+***Authenticate to OCIR registry***
 
 Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) and log into the Registry using the Auth Token as your password. 
 As an example I am using for phx for us-phoenix-1 region
@@ -44,7 +44,7 @@ As an example I am using for phx for us-phoenix-1 region
 docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 ```
 
-**Create, deploy and invoke your function**
+***Create, deploy and invoke your function***
 
 Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. Set TAG_NAMESPACE to your backup tag namespace. As an example my tag namespace is called *Production*
 ```
@@ -66,7 +66,7 @@ fn list functions backup_policy
 
 I recommend enabling logging for the function you created as described in [Enable and View Function Logs](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsexportingfunctionlogfiles.htm#usingconsole)
 
-**Create an event rule**
+***Create an event rule***
 
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End.
 
@@ -74,5 +74,7 @@ Under Actions, set **Action Type** to Functions and select **Function Compartmen
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)
 
-**Create a new Block Storage volume and check that the **
+***Create a new Block Storage volume and validate that the function is invoked***
+
+Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment. It should automatically invoke *assign_backup_policy* functions. 
 
