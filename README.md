@@ -68,13 +68,21 @@ I recommend enabling logging for the function you created as described in [Enabl
 
 ***Create an event rule***
 
-Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End. Add a **Condition** and with the **Attribute Name** compartmentID, and specify your compartment ID.
+Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End. Add a **Condition** and with the **Attribute Name** set to compartmentID, and specify your compartment OCID in the **Attribute Value** field.
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)
 
+***Create a backup policy***
+
+Create a backup policy and add a schedule as descibed in [Create a Backup Policy](https://docs.oracle.com/en-us/iaas/private-cloud-appliance/cmn/block/creating-a-backup-policy.htm). 
+
+
+
 ***Create a new Block Storage volume and validate that the function is invoked***
 
-Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment. It should automatically invoke *assign_backup_policy* functions. 
+Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment or one of its sub-compartments. Assign a tag to the volume matching **TAG_NAMESPACE** and **TAG_NAME** from func.yaml file, and assign the backup policy OCID as tag value. Once the volume is created it should automatically invoke *assign_backup_policy* function and assign the specified backup policy OCID
+
+
 
