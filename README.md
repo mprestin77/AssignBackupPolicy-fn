@@ -34,6 +34,7 @@ Update the context with the location of the Registry you want to use. As an exam
 ```
 fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
+To find a region key for the region you are using see [OCI Region Availbility](https://docs.oracle.com/en-us/iaas/analytics-for-applications/doc/region-availability.html) map.
 
 **Authenticate to OCIR registry**
 
@@ -58,7 +59,12 @@ Create an application *backup_policy* as described in [Create Applications](http
 fn -v deploy --app backup_policy
 ```
 
-Check that the function is successfully deployed.
+Check that the function is successfully deployed
+```
+fn list functions backup_policy
+```
+
+I recommend enabling logging for the function you created as described in [Enable and View Function Logs](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsexportingfunctionlogfiles.htm#usingconsole)
 
 **Create an event rule**
 
@@ -68,5 +74,5 @@ Under Actions, set **Action Type** to Functions and select **Function Compartmen
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)
 
-
+**Create a new Block Storage volume and check that the **
 
