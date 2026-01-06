@@ -88,9 +88,9 @@ Create a new Block Storage volume or create a new compute instance with a boot v
 Check that the configured backup policy is assigned to the volume
 ![image]https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/VolumeBackupSchedule.png
 
-All function invocations can be viewed in the OCI logs. If you have configured logging for the application, go to the log you assigned to view the invocation details. For example, when the function is successfully executed you should see the following message in the log
+All function invocations can be viewed in the OCI logs. If you have configured logging for the application, go to the log you assigned to view the invocation details. For example, when a function is successfully executed, you should see the following message in the log:
 
-
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/FnLog.png)
 
 
 
