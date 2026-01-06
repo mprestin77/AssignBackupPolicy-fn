@@ -43,6 +43,7 @@ As an example I am using for phx for us-phoenix-1 region
 ```
 docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 ```
+Check that it returns **Login Succeeded**.
 
 # Create, deploy and invoke your function
 
@@ -66,7 +67,7 @@ fn list functions backup_policy
 
 I recommend enabling logging for the function you created as described in [Enable and View Function Logs](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsexportingfunctionlogfiles.htm#usingconsole)
 
-# Create an event rule***
+# Create an event rule
 
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End. Add a **Condition** and with the **Attribute Name** set to compartmentID, and specify your compartment OCID in the **Attribute Value** field.
 
