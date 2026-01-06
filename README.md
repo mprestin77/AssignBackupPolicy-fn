@@ -54,7 +54,7 @@ config:
 ```
 *Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID*
 
-Create an application *backup_policy* as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm) and create a function *assign_backup_policy*
+Create an application *backup_policy* as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm) and after that deploy *assign_backup_policy* function by running the following command
 ```
 fn -v deploy --app backup_policy
 ```
@@ -63,6 +63,7 @@ Check that the function is successfully deployed
 ```
 fn list functions backup_policy
 ```
+You should see *assign_backup_policy* listed.
 
 I recommend enabling logging for the function you created as described in [Enable and View Function Logs](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsexportingfunctionlogfiles.htm#usingconsole)
 
