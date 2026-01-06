@@ -1,7 +1,7 @@
 # AssignBackupPolicy-fn
 This template demonstrates how to automate the configuration of backup policies for OCI Block Storage volumes based on volume tags. It uses OCI Events and OCI Functions. When a new boot or block volume is created, an event is emitted that triggers an OCI Function. The function reads the volume’s tags and automatically assigns the appropriate backup policy.
 
-# Pre-Requisites
+*Pre-Requisites*
 
 Create a [dynamic group](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm) for the compartment where block storage volumes will be created. You can use the following matching rule:
 
@@ -79,7 +79,7 @@ Under Actions, set **Action Type** to Functions and select **Function Compartmen
 
 Create a backup policy and add a schedule as descibed in [Create a Backup Policy](https://docs.oracle.com/en-us/iaas/private-cloud-appliance/cmn/block/creating-a-backup-policy.htm). 
 
-
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/BackupPolicy.png)
 
 # Create a new Block Storage volume and validate that the function is invoked
 
