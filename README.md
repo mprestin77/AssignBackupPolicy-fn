@@ -75,15 +75,15 @@ Under Actions, set **Action Type** to Functions and select **Function Compartmen
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)
 
-## Create a backup policy
+## Validate that the function is invoked when a new volume is created
 
-Create a backup policy and add a schedule as descibed in [Create a Backup Policy](https://docs.oracle.com/en-us/iaas/private-cloud-appliance/cmn/block/creating-a-backup-policy.htm). 
+Create a backup policy and add a schedule as descibed in [Create a Backup Policy](https://docs.oracle.com/en-us/iaas/private-cloud-appliance/cmn/block/creating-a-backup-policy.htm) 
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/BackupPolicy.png)
 
-## Create a new Block Storage volume and validate that the function is invoked
+Under **Details** copy the backup policy OCID.
 
-Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment or one of its sub-compartments. Assign a tag to the volume matching **TAG_NAMESPACE** and **TAG_NAME** from func.yaml file, and assign the backup policy OCID as tag value. Once the volume is created it should automatically invoke *assign_backup_policy* function and assign the specified backup policy OCID
+Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment or one of its sub-compartments. Assign a tag to the volume matching **TAG_NAMESPACE** and **TAG_NAME** from func.yaml file, and assign the backup policy OCID as the tag value. Once the volume is created it should automatically invoke *assign_backup_policy* function and assign the specified backup policy OCID
 
 
 
