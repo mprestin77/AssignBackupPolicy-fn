@@ -14,7 +14,7 @@ Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id 
 ```
 Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartcloudshell.htm)
 
-*Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the [quick start guide](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm).*
+*Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the [Functions Quick Start on Local Host](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm).*
 
 **Setup your Cloud Shell environment**
 
