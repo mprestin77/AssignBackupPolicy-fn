@@ -16,7 +16,7 @@ Before you deploy AssignBackupPolicy function, make sure you have run step C of 
 
 *Note: In this example I am using OCI Cloud Shell for deploying my function. Alternatively, you can also use your local machine or OCI Compute as your dev environments. refer the [Functions Quick Start on Local Host](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm).*
 
-***Setup your Cloud Shell environment***
+# Setup your Cloud Shell environment
 
 Login to OCI Cloud Console and Launch Cloud Shell
 
@@ -36,7 +36,7 @@ fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
 To find a region key for the region you are using see [OCI Region Availbility](https://docs.oracle.com/en-us/iaas/analytics-for-applications/doc/region-availability.html) map.
 
-***Authenticate to OCIR registry***
+# Authenticate to OCIR registry
 
 Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) and log into the Registry using the Auth Token as your password. 
 As an example I am using for phx for us-phoenix-1 region
@@ -44,7 +44,7 @@ As an example I am using for phx for us-phoenix-1 region
 docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 ```
 
-***Create, deploy and invoke your function***
+# Create, deploy and invoke your function
 
 Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. Set TAG_NAMESPACE to your backup tag namespace. As an example my tag namespace is called *Production*
 ```
@@ -66,7 +66,7 @@ fn list functions backup_policy
 
 I recommend enabling logging for the function you created as described in [Enable and View Function Logs](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsexportingfunctionlogfiles.htm#usingconsole)
 
-***Create an event rule***
+# Create an event rule***
 
 Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End. Add a **Condition** and with the **Attribute Name** set to compartmentID, and specify your compartment OCID in the **Attribute Value** field.
 
@@ -74,13 +74,13 @@ Under Actions, set **Action Type** to Functions and select **Function Compartmen
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)
 
-***Create a backup policy***
+# Create a backup policy
 
 Create a backup policy and add a schedule as descibed in [Create a Backup Policy](https://docs.oracle.com/en-us/iaas/private-cloud-appliance/cmn/block/creating-a-backup-policy.htm). 
 
 
 
-***Create a new Block Storage volume and validate that the function is invoked***
+# Create a new Block Storage volume and validate that the function is invoked
 
 Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment or one of its sub-compartments. Assign a tag to the volume matching **TAG_NAMESPACE** and **TAG_NAME** from func.yaml file, and assign the backup policy OCID as tag value. Once the volume is created it should automatically invoke *assign_backup_policy* function and assign the specified backup policy OCID
 
