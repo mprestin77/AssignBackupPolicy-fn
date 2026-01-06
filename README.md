@@ -12,9 +12,9 @@ The following policies are required for this dynamic group:
 Allow dynamic-group <dynamic-group-name> to manage backup-policy-assignments in compartment id <compartment OCID>
 Allow dynamic-group <dynamic-group-name> to use volume-family in compartment id <compartment OCID>
 ```
-Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_functions_cloudshell_quickview/functions_quickview_top/functions_quickview/index.html)
+Before you deploy AssignBackupPolicy function, make sure you have run step C of the [Oracle Functions Quick Start Guide for Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartcloudshell.htm)
 
-*Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the quick start guide.*
+*Note: Alternatively, You can also use your local machine or OCI Compute as your dev environments. refer the [quick start guide](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm).*
 
 **Setup your Cloud Shell environment**
 
