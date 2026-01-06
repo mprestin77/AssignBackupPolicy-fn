@@ -68,7 +68,7 @@ I recommend enabling logging for the function you created as described in [Enabl
 
 ***Create an event rule***
 
-Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End. Add a **Condition** and select CompartmentID
+Create an event rule with a **Condition**: Event Type, **Service Name**: Block Volume, and **Event Type**: Create Volume End. Add a **Condition** and with the **Attribute Name** compartmentID, and specify your compartment ID.
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
