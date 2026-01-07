@@ -40,7 +40,7 @@ To find a region key for the region you are using see [OCI Region Availbility](h
 
 ## Authenticate to OCIR registry
 
-Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) and log into the Registry using the Auth Token as your password. As an example I am using for phx for us-phoenix-1 region
+Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) and log into the Registry using the Auth Token as your password as described in [Logging OCI Registry](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionslogintoocir.htm). As an example I am using for phx for us-phoenix-1 region
 ```
 docker login -u '<tenancy-namespace>/<domain-name>/<user-name>' phx.ocir.io
 ```
