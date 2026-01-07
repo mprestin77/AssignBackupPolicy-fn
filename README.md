@@ -20,7 +20,7 @@ Before you deploy AssignBackupPolicy function, make sure you have run step C of 
 
 Login to OCI Cloud Console and Launch Cloud Shell. From **Actions** menu choose **Architecture** and select the desired architecture. 
 
-![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CloudShellArch.png)
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CloudShellArchitecture.png)
 
 Use the context for your region, here us-phoenix-1 is used as an example
 ```
