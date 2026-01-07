@@ -42,7 +42,7 @@ Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/
 ```
 docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
 ```
-Check that it returns **Login Succeeded**.
+Enter password and check that it returns **Login Succeeded**.
 
 ## Create, deploy and invoke your function
 
