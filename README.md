@@ -48,7 +48,16 @@ Enter password and check that it returns **Login Succeeded**.
 
 ## Create, deploy and invoke your function
 
-Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. I recommend creating a directory assign_backup_policy in Cloud Shell and copying all 3 files in this directory.  Edit func.yaml file and set TAG_NAMESPACE to your tag namespace. As an example my tag namespace is called *Production*
+Copy files from *assign_backup_policy* folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). I recommend creating a directory *assign_backup_policy* in Cloud Shell and copying all 3 files to this directory. Then change directory to *assign_backup_policy*: 
+```
+cd assign_backup_policy
+ls -1
+func.py
+func.yaml
+requirements.txt
+```
+
+Edit func.yaml file and set TAG_NAMESPACE to your tag namespace. As an example my tag namespace is called *Production*
 ```
 config:
   TAG_NAME: BackupPolicyID
