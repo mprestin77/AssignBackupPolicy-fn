@@ -83,7 +83,7 @@ Create a backup policy and add a schedule as descibed in [Create a Backup Policy
 
 Under **Details** copy the backup policy OCID.
 
-Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment or one of its sub-compartments. Assign a tag to the volume matching **TAG_NAMESPACE** and **TAG_NAME** from func.yaml file, and assign the backup policy OCID as the tag value. Once the volume is created it should automatically invoke *assign_backup_policy* function and assign the specified backup policy OCID
+Create a new Block Storage volume or create a new compute instance with a boot volume in the specified compartment or one of its sub-compartments. Assign a tag to the volume matching **TAG_NAMESPACE** and **TAG_NAME** from func.yaml file, and assign the backup policy OCID as the tag value. Once the volume is created, it should automatically invoke *assign_backup_policy* function and assign the specified backup policy OCID
 
 Check that the configured backup policy is assigned to the volume
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/VolumeBackupSchedule.png)
