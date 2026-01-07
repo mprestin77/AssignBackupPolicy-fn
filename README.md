@@ -18,7 +18,9 @@ Before you deploy AssignBackupPolicy function, make sure you have run step C of 
 
 ## Setup your Cloud Shell environment
 
-Login to OCI Cloud Console and Launch Cloud Shell
+Login to OCI Cloud Console and Launch Cloud Shell. From **Actions** menu choose **Architecture** and select the desired architecture. 
+
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CloudShellArch.png)
 
 Use the context for your region, here us-phoenix-1 is used as an example
 ```
@@ -40,13 +42,13 @@ To find a region key for the region you are using see [OCI Region Availbility](h
 
 Generate [Auth Token](https://docs.cloud.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm) and log into the Registry using the Auth Token as your password. As an example I am using for phx for us-phoenix-1 region
 ```
-docker login -u '<tenancy-namespace>/<user-name>' phx.ocir.io
+docker login -u '<tenancy-namespace>/<domain-name>/<user-name>' phx.ocir.io
 ```
 Enter password and check that it returns **Login Succeeded**.
 
 ## Create, deploy and invoke your function
 
-Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. Set TAG_NAMESPACE to your backup tag namespace. As an example my tag namespace is called *Production*
+Copy assign_backup_policy folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). Edit func.yaml file. I recommend creating a directory assign_backup_policy in Cloud Shell and copying all 3 files in this directory.  Edit func.yaml file and set TAG_NAMESPACE to your tag namespace. As an example my tag namespace is called *Production*
 ```
 config:
   TAG_NAME: BackupPolicyID
@@ -54,7 +56,9 @@ config:
 ```
 *Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID*
 
-Create an application *backup_policy* as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm) and after that deploy *assign_backup_policy* function by running the following command
+Create an application *backup_policy* as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). 
+
+that deploy *assign_backup_policy* function by running the following command
 ```
 fn -v deploy --app backup_policy
 ```
