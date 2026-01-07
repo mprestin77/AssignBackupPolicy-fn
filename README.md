@@ -46,6 +46,18 @@ docker login -u '<tenancy-namespace>/<domain-name>/<user-name>' phx.ocir.io
 ```
 Enter password and check that it returns **Login Succeeded**.
 
+## Create Application
+
+Create an application attached to your existing VCN subnet as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). In my example the application name is **backup_policy**. Insure that **Shape** matches **Architecture** configured in Cloud Shell when setting Cloud Shell envirinment.
+
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CreateApplication.png)
+
+Check from Cloud Shell that you can see the created application
+
+fn list apps
+
+It should return the application name and ID. If you don't see the application listed make sure that the application was created in the compartment that you configured in fn context when setting Cloud Shell environment.
+
 ## Create, deploy and invoke your function
 
 Copy files from *assign_backup_policy* folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). I recommend creating a directory *assign_backup_policy* in Cloud Shell and copying all 3 files to this directory. Then change directory to *assign_backup_policy*: 
@@ -65,11 +77,7 @@ config:
 ```
 *Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID*
 
-Create an application attached to your existing VCN subnet as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). In my example the application name is **backup_policy**. Insure that **Shape** matches **Architecture** configured in Cloud Shell when setting Cloud Shell envirinment.
-
-![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CreateApplication.png)
-
-that deploy *assign_backup_policy* function by running the following command
+Deploy *assign_backup_policy* function by running the following command
 ```
 fn -v deploy --app backup_policy
 ```
