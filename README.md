@@ -56,7 +56,9 @@ config:
 ```
 *Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID*
 
-Create an application *backup_policy* as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). 
+Create an application attached to your existing VCN as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). In my example the application name is **backup_policy**. Insure that the **Shape** matches the **Architecture** configured in Cloud Shell when setting Cloud Shell envirinment.
+
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CreateApplication.png)
 
 that deploy *assign_backup_policy* function by running the following command
 ```
