@@ -30,13 +30,18 @@ fn use context us-phoenix-1
 
 Update the context with the function's compartment ID
 ```
-fn update context oracle.compartment-id ocid1.compartment.oc1..
+fn update context oracle.compartment-id <compartment-ocid>
 ```
 Update the context with the location of the Registry you want to use. As an example I am using for phx for us-phoenix-1 region
 ```
 fn update context registry phx.ocir.io/<tenancy-namespace>/<OCIR-repo-name>
 ```
 To find a region key for the region you are using see [OCI Region Availbility](https://docs.oracle.com/en-us/iaas/analytics-for-applications/doc/region-availability.html) map.
+
+Update the context with the image compartment ID
+```
+fn update context oracle.image-compartment-id <compartment-ocid>
+```
 
 ## Authenticate to OCIR registry
 
@@ -48,7 +53,7 @@ Enter password and check that it returns **Login Succeeded**.
 
 ## Create Application
 
-Create an application attached to your existing VCN subnet as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). In my example the application name is **backup_policy**. Insure that **Shape** matches **Architecture** configured in Cloud Shell when setting Cloud Shell envirinment.
+Create an application attached to your existing VCN subnet as described in [Create Applications](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm). In my example the application name is **backup_policy**. Insure that **Shape** matches **Architecture** configured in Cloud Shell when setting Cloud Shell environment.
 
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CreateApplication.png)
 
@@ -56,7 +61,7 @@ Check from Cloud Shell that you can see the created application
 
 fn list apps
 
-It should return the application name and ID. If you don't see the application listed make sure that the application was created in the compartment that you configured in fn context when setting Cloud Shell environment.
+It should return the application name and ID. If you don't see the application listed make sure that the application was created in the compartment that you configured in the function context when setting Cloud Shell environment.
 
 ## Create, deploy and invoke your function
 
