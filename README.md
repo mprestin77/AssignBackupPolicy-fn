@@ -97,7 +97,7 @@ I recommend enabling logging for the function you created as described in [Enabl
 
 ## Create an event rule
 
-Create an event rule with a **Condition**: **Event Type**, **Service Name**: **Block Volume**, and **Event Type**: **Create Volume End**. Add a **Condition** and with the **Attribute Name** set to **compartmentid**, and specify your compartment OCID in the **Attribute Value** field.
+Create an event rule with a **Condition**: **Event Type**, **Service Name**: **Block Volume**, and **Event Type**: **Create Volume End**. Add a **Condition** with the **Attribute Name** set to **compartmentid**, and specify your compartment OCID in the **Attribute Value** field.
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
