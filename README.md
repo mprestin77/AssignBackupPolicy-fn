@@ -65,7 +65,7 @@ It should return the application name and ID. If you don't see the application l
 
 ## Create, deploy and invoke your function
 
-Copy files from *assign_backup_policy* folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). I recommend creating a directory *assign_backup_policy* in Cloud Shell and copying all 3 files to this directory. Then change directory to *assign_backup_policy*: 
+Copy files from *assign_backup_policy* folder to Cloud Shell as described in [Transferring Files to CLoud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/devcloudshellgettingstarted.htm#Cloud_Shell_Transferring_Files). I recommend creating a directory named assign_backup_policy in Cloud Shell and copying all three files into it. Then, change into the assign_backup_policy directory: 
 ```
 cd assign_backup_policy
 ls -1
@@ -80,7 +80,7 @@ config:
   TAG_NAME: BackupPolicyID
   TAG_NAMESPACE: Production
 ```
-*Note: Optionally you can change TAG_NAME value to the name of the tag that you assign to Block Storage volumes. In my example TAG_NAME is set to BackupPolicyID*
+*Note: The tag namespace and the associated tag must be pre-created in your OCI tenancy. In this example, the tag namespace is **Production** and the tag name is **BackupPolicyID**. You’ll use this tag when creating Block Storage volumes, and the tag value must be set to the backup policy OCID.* 
 
 Deploy *assign_backup_policy* function by running the following command
 ```
