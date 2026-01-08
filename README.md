@@ -58,9 +58,9 @@ Create an application attached to your existing VCN subnet as described in [Crea
 ![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/CreateApplication.png)
 
 Check from Cloud Shell that you can see the created application
-
+```
 fn list apps
-
+```
 It should return the application name and ID. If you don't see the application listed make sure that the application was created in the compartment that you configured in the function context when setting Cloud Shell environment.
 
 ## Create, deploy and invoke your function
