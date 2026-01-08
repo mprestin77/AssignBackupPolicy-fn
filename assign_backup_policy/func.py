@@ -23,12 +23,27 @@ def handler(ctx, data: io.BytesIO = None):
             logging.getLogger().info(message)
             return response.Response(ctx, response_data=message, status_code=400)
 
+        # Parse volume OCID and determine whether it is a block volume or boot volume
+        parts = volume_id.split('.')
+    
+        if len(parts) < 2:
+          raise ValueError(f"Malformed volume OCID: {volume_id}")
+
+        resource_type = parts[1].lower()
+
         # Initialize OCI client
         signer = oci.auth.signers.get_resource_principals_signer()
         bs_client = oci.core.BlockstorageClient(config={}, signer=signer)
 
         # 3. Get the specific volume to check its tags
-        volume = bs_client.get_volume(volume_id).data
+
+        if resource_type == "volume":
+           volume = bs_client.get_volume(volume_id).data
+        elif resource_type == "bootvolume":
+           volume = bs_client.get_boot_volume(volume_id).data
+        else:
+           raise ValueError(f"Malformed volume OCID: {volume_id}")
+
         defined_tags = volume.defined_tags or {}
         policy_id = defined_tags.get(tag_namespace, {}).get(tag_key)
 
