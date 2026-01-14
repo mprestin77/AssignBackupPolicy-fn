@@ -108,7 +108,7 @@ Add a **Condition** with the **Attribute Name** set to **compartmentid**, and sp
 
 You can add multiple compartment OCID(s) in **Attribute Values** field. 
 
-*Note: When configuring policies for the dynamic group make sure that you add a policy for every compartment added to this filter. These policies are automatically applied to all sub-compartments.*
+*Note: When [configuring policies for the dynamic group](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/README.md#pre-requisites) make sure that you add a policy for every compartment added to this filter. These policies are automatically applied to all sub-compartments.*
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
