@@ -97,11 +97,12 @@ I recommend enabling logging for the function you created as described in [Enabl
 
 ## Create an event rule
 
-Create an event rule with a **Condition**: **Event Type**, **Service Name**: **Block Volume**, and **Event Type**: **Create Volume End**. Add a **Condition** with the **Attribute Name** set to **compartmentid**, and specify your compartment OCID in the **Attribute Value** field.
+Create an event rule with a **Condition**: **Event Type**, **Service Name**: **Block Volume**. Add the following filters in **Event Type**: 
+**Create Volume End**, **Create Boot Volume End**, **Update Volume Begin**, **Update Boot Volume Begin**. Add a **Condition** with the **Attribute Name** set to **compartmentid**, and specify your compartment OCID in the **Attribute Value** field.
 
 Under Actions, set **Action Type** to Functions and select **Function Compartment**, **Function Application**, and **Function Name**.
 
-![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/EventRule.png)
+![image](https://github.com/mprestin77/AssignBackupPolicy-fn/blob/main/images/AssignBackupPolicyEventRule.png)
 
 ## Validate that the function is invoked when a new volume is created
 
