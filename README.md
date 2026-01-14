@@ -99,10 +99,10 @@ I recommend enabling logging for the function you created as described in [Enabl
 
 Create an event rule with **Condition** set to **Event Type** and **Service Name** set to **Block Volume**. Add the following filters in **Event Type**:
 ```
-**Create Volume End** 
-**Create Boot Volume End** 
-**Update Volume Begin**
-**Update Boot Volume Begin** 
+Create Volume End 
+Create Boot Volume End 
+Update Volume Begin
+Update Boot Volume Begin 
 ```
 Add a **Condition** with the **Attribute Name** set to **compartmentid**, and specify your compartment OCID in the **Attribute Value** field.
 
